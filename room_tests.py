@@ -1,5 +1,6 @@
 import unittest
 from Room import *
+from Items import *
 
 class RoomTests(unittest.TestCase):
     """unit tester for Room class"""
@@ -20,28 +21,25 @@ class RoomTests(unittest.TestCase):
     def test_drawing_room(self):
         room = Room()
         room.doors = ['north', 'south', 'east', 'west']
-        room.items = ['healing potion', 'vision potion']
+        room.items = [HealingPotion(), VisionPotion()]
 
         room.__str__()
 
         room = Room()
         room.doors = ['north', 'east', 'west']
-        pit = Pit()
-        room.items = [pit]
+        room.items = [Pit()]
 
         room.__str__()
 
         room = Room()
         room.doors = ['south', 'west']
-        escape = Exit()
-        room.items = [escape]
+        room.items = [Exit()]
 
         room.__str__()
 
         room = Room()
         room.doors = ['south', 'north']
-        item = HealingPotion()
-        room.items = [item]
+        room.items = [HealingPotion()]
 
         room.__str__()
 

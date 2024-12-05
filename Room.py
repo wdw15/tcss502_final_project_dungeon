@@ -6,6 +6,12 @@ class Room:
         self._items = None
         self._doors = None
 
+        self._north = None
+        self._south = None
+        self._east = None
+        self._west = None
+
+
     @property
     def items(self):
         return self._items
@@ -31,6 +37,9 @@ class Room:
 
     def draw(self):
         return self.__str__()
+
+    def __link_rooms__(self):
+        pass
 
     def __str__(self):
         string = ''
